@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -47,5 +48,20 @@ class Event extends Model
     public function registeredUsers(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'event_registrations')->withTimestamps();
+    }
+
+    public function getImageUrlAttribute(): ?string
+    {
+        if (! $this->image) {
+            return null;
+        }
+
+        $storedPath = 'uploads/' . $this->image;
+
+        if (Storage::disk('public')->exists($storedPath)) {
+            return Storage::url($storedPath);
+        }
+
+        return asset('uploads/' . $this->image);
     }
 }

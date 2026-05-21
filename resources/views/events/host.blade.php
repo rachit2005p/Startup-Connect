@@ -76,8 +76,8 @@
                             <label class="form-label">Event Image</label>
                             <input class="form-control" type="file" name="image" accept="image/png,image/jpeg,image/webp">
                             <div class="form-text">JPG, PNG, or WEBP up to 5 MB.</div>
-                            @if(isset($event) && $event->image)
-                                <img class="img-fluid rounded mt-2" src="{{ asset('uploads/' . $event->image) }}" alt="{{ $event->title }}">
+                            @if(isset($event) && $event->image_url)
+                                <img class="img-fluid rounded mt-2" src="{{ $event->image_url }}" alt="{{ $event->title }}">
                             @endif
                         </div>
                     </div>

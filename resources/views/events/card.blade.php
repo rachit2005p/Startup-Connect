@@ -1,7 +1,7 @@
 <div class="col-md-6 col-lg-4">
     <div class="card h-100">
-        @if($event->image)
-            <img class="card-img-top event-image" src="{{ asset('uploads/' . $event->image) }}" alt="{{ $event->title }}">
+        @if($event->image_url)
+            <img class="card-img-top event-image" src="{{ $event->image_url }}" alt="{{ $event->title }}">
         @else
             <div class="event-image bg-secondary-subtle d-flex align-items-center justify-content-center">
                 <span class="text-secondary">Startup Event</span>

@@ -6,8 +6,8 @@
 <section class="container my-5">
     <div class="row g-4">
         <div class="col-lg-7">
-            @if($event->image)
-                <img class="img-fluid rounded detail-image w-100" src="{{ asset('uploads/' . $event->image) }}" alt="{{ $event->title }}">
+            @if($event->image_url)
+                <img class="img-fluid rounded detail-image w-100" src="{{ $event->image_url }}" alt="{{ $event->title }}">
             @else
                 <div class="detail-image bg-secondary-subtle rounded d-flex align-items-center justify-content-center">
                     <span class="text-secondary">Startup Event</span>

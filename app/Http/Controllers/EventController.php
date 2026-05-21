@@ -6,7 +6,7 @@ use App\Models\Category;
 use App\Models\Event;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\View\View;
 
@@ -112,19 +112,18 @@ class EventController extends Controller
             return null;
         }
 
-        File::ensureDirectoryExists(public_path('uploads'));
-
         $file = $request->file('image');
-        $filename = time() . '_' . Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $file->getClientOriginalExtension();
-        $file->move(public_path('uploads'), $filename);
+        $filename = time() . '_' . Str::slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME)) . '.' . $file->extension();
+
+        Storage::disk('public')->putFileAs('uploads', $file, $filename);
 
         return $filename;
     }
 
     private function deleteImage(?string $filename): void
     {
-        if ($filename && File::exists(public_path('uploads/' . $filename))) {
-            File::delete(public_path('uploads/' . $filename));
+        if ($filename) {
+            Storage::disk('public')->delete('uploads/' . $filename);
         }
     }
 }
