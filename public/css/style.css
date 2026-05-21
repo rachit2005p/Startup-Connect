@@ -1,7 +1,7 @@
 body {
-    background: #f6f8fb;
+    background: #f7fafc;
     color: #1f2937;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
 .navbar-brand {
@@ -9,14 +9,136 @@ body {
 }
 
 .hero {
-    background: linear-gradient(120deg, #0f766e, #2563eb);
+    background:
+        linear-gradient(120deg, rgba(11, 92, 101, 0.94), rgba(37, 99, 235, 0.9)),
+        url('/uploads/campus-startup-hackathon.png') center/cover;
     color: white;
-    padding: 72px 0;
+    padding: 86px 0 110px;
+}
+
+.hero-label,
+.eyebrow,
+.panel-kicker {
+    color: #f59e0b;
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.hero-panel,
+.auth-card,
+.cta-card {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+    color: #111827;
+}
+
+.hero-panel {
+    padding: 28px;
+}
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.hero-stats div {
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    min-width: 112px;
+    padding: 14px 16px;
+}
+
+.hero-stats strong {
+    display: block;
+    font-size: 1.45rem;
+}
+
+.hero-stats span,
+.mini-timeline p {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.mini-timeline {
+    display: grid;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.mini-timeline div {
+    align-items: center;
+    display: grid;
+    gap: 14px;
+    grid-template-columns: 42px 1fr;
+}
+
+.mini-timeline span {
+    align-items: center;
+    background: #0f766e;
+    border-radius: 50%;
+    color: white;
+    display: inline-flex;
+    font-weight: 700;
+    height: 42px;
+    justify-content: center;
+    width: 42px;
+}
+
+.mini-timeline p {
+    color: #374151;
+    margin: 0;
 }
 
 .section-title {
     font-weight: 700;
+    margin-bottom: 0;
+}
+
+.section-heading {
+    align-items: end;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 24px;
+}
+
+.feature-strip {
+    margin-top: -44px;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-tile,
+.category-card {
+    background: white;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 8px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    height: 100%;
+    padding: 22px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-tile:hover,
+.category-card:hover,
+.card:hover {
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.14);
+    transform: translateY(-3px);
+}
+
+.feature-tile span {
+    color: #0f766e;
+    font-weight: 800;
+}
+
+.feature-tile p {
+    color: #4b5563;
+    margin: 8px 0 0;
 }
 
 .event-image {
@@ -33,6 +155,7 @@ body {
     border: 0;
     border-radius: 8px;
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .badge-mode {
@@ -42,4 +165,92 @@ body {
 .footer {
     background: #111827;
     color: #d1d5db;
+}
+
+.cta-band {
+    background: #0f172a;
+    border-radius: 8px;
+    color: white;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 34px;
+}
+
+.auth-page,
+.host-page {
+    background:
+        linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(37, 99, 235, 0.1)),
+        #f7fafc;
+    min-height: 72vh;
+    padding: 64px 0;
+}
+
+.auth-copy h1,
+.host-intro h1 {
+    font-weight: 800;
+    line-height: 1.08;
+    margin: 12px 0 16px;
+}
+
+.auth-copy p,
+.host-intro p {
+    color: #4b5563;
+    font-size: 1.05rem;
+}
+
+.auth-points,
+.host-checklist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.auth-points span,
+.host-checklist span {
+    background: white;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 999px;
+    color: #0f766e;
+    font-weight: 700;
+    padding: 8px 12px;
+}
+
+.form-control,
+.form-select {
+    border-color: #d6dee8;
+    border-radius: 8px;
+    min-height: 46px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #0f766e;
+    box-shadow: 0 0 0 0.2rem rgba(15, 118, 110, 0.14);
+}
+
+.btn-primary {
+    background: #0f766e;
+    border-color: #0f766e;
+}
+
+.btn-primary:hover {
+    background: #115e59;
+    border-color: #115e59;
+}
+
+@media (max-width: 767.98px) {
+    .hero {
+        padding: 64px 0 88px;
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .cta-band {
+        padding: 24px;
+    }
 }

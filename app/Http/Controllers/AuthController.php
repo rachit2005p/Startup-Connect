@@ -26,7 +26,7 @@ class AuthController extends Controller
         $user = User::create($data);
         Auth::login($user);
 
-        return redirect()->route('dashboard')->with('success', 'Registration successful. Welcome to StartupConnect!');
+        return redirect()->route('home')->with('success', 'Registration successful. Welcome to StartupConnect!');
     }
 
     public function showLogin(): View
@@ -44,7 +44,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended(route('dashboard'))->with('success', 'Login successful.');
+            return redirect()->intended(route('home'))->with('success', 'Login successful.');
         }
 
         return back()->withErrors([

@@ -3,11 +3,24 @@
 @section('title', isset($event) ? 'Edit Hosted Event | StartupConnect' : 'Host Event | StartupConnect')
 
 @section('content')
-<section class="container my-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-9">
-            <div class="card p-4">
-                <h1 class="h3 mb-3">{{ isset($event) ? 'Edit Hosted Event' : 'Host a Startup Event' }}</h1>
+<section class="host-page">
+    <div class="container">
+        <div class="row align-items-start justify-content-center g-4">
+        <div class="col-lg-4">
+            <div class="host-intro">
+                <span class="eyebrow">{{ isset($event) ? 'Refine your listing' : 'Share an opportunity' }}</span>
+                <h1>{{ isset($event) ? 'Update your event with confidence.' : 'Host a Startup Event' }}</h1>
+                <p>Give students the details they need to decide quickly: what it is, when it happens, where to join, and why it matters.</p>
+                <div class="host-checklist">
+                    <span>Clear title</span>
+                    <span>Strong description</span>
+                    <span>Useful registration link</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="auth-card p-4">
+                <h2 class="h3 mb-3">{{ isset($event) ? 'Edit Hosted Event' : 'Event Details' }}</h2>
                 <form method="POST" action="{{ isset($event) ? route('host-events.update', $event) : route('host-events.store') }}" enctype="multipart/form-data">
                     @csrf
                     @isset($event)
@@ -72,6 +85,7 @@
                     <a class="btn btn-outline-secondary mt-4" href="{{ route('events.index') }}">Cancel</a>
                 </form>
             </div>
+        </div>
         </div>
     </div>
 </section>
