@@ -427,6 +427,44 @@ body {
     box-shadow: 0 0 0 0.2rem rgba(15, 118, 110, 0.14);
 }
 
+.password-field {
+    position: relative;
+}
+
+.password-field .form-control {
+    padding-right: 48px;
+}
+
+.password-toggle {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    color: #64748b;
+    display: inline-flex;
+    height: 42px;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    width: 42px;
+}
+
+.password-toggle:hover,
+.password-toggle.is-visible {
+    color: #ff681c;
+}
+
+.password-toggle svg {
+    fill: none;
+    height: 21px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    width: 21px;
+}
+
 .btn-primary {
     background: #ff681c;
     border-color: #ff681c;

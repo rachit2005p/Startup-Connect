@@ -34,11 +34,28 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input class="form-control" type="password" name="password">
+                        <div class="password-field">
+                            <input id="register-password" class="form-control" type="password" name="password" autocomplete="new-password" aria-describedby="passwordHelp">
+                            <button class="password-toggle" type="button" data-password-toggle="register-password" aria-label="Show password">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M2.25 12s3.5-6.25 9.75-6.25S21.75 12 21.75 12 18.25 18.25 12 18.25 2.25 12 2.25 12Z"></path>
+                                    <circle cx="12" cy="12" r="2.75"></circle>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="passwordHelp" class="form-text">Use at least 6 characters. A mix of letters, numbers, and symbols is stronger.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Confirm Password</label>
-                        <input class="form-control" type="password" name="password_confirmation">
+                        <div class="password-field">
+                            <input id="register-password-confirmation" class="form-control" type="password" name="password_confirmation" autocomplete="new-password">
+                            <button class="password-toggle" type="button" data-password-toggle="register-password-confirmation" aria-label="Show password">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M2.25 12s3.5-6.25 9.75-6.25S21.75 12 21.75 12 18.25 18.25 12 18.25 2.25 12 2.25 12Z"></path>
+                                    <circle cx="12" cy="12" r="2.75"></circle>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                     <button class="btn btn-primary w-100" type="submit">Register</button>
                 </form>
