@@ -1,0 +1,45 @@
+body {
+    background: #f6f8fb;
+    color: #1f2937;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.hero {
+    background: linear-gradient(120deg, #0f766e, #2563eb);
+    color: white;
+    padding: 72px 0;
+}
+
+.section-title {
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.event-image {
+    height: 190px;
+    object-fit: cover;
+}
+
+.detail-image {
+    max-height: 420px;
+    object-fit: cover;
+}
+
+.card {
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.badge-mode {
+    text-transform: capitalize;
+}
+
+.footer {
+    background: #111827;
+    color: #d1d5db;
+}
