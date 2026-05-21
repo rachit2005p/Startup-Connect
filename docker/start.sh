@@ -24,8 +24,18 @@ EOF
 
 php artisan storage:link --force || true
 
+if [ "${DB_CONNECTION:-}" = "sqlite" ]; then
+    export DB_DATABASE="${DB_DATABASE:-/var/www/html/database/database.sqlite}"
+    mkdir -p "$(dirname "${DB_DATABASE}")"
+    touch "${DB_DATABASE}"
+fi
+
 if [ "${RUN_MIGRATIONS:-false}" = "true" ]; then
     php artisan migrate --force
+fi
+
+if [ "${RUN_SEEDERS:-false}" = "true" ]; then
+    php artisan db:seed --force
 fi
 
 exec apache2-foreground

@@ -47,16 +47,13 @@ APP_KEY=base64:your-generated-laravel-key
 APP_DEBUG=false
 APP_URL=https://your-service-name.onrender.com
 LOG_CHANNEL=stderr
-DB_CONNECTION=mysql
-DB_HOST=your-database-host
-DB_PORT=3306
-DB_DATABASE=your-database-name
-DB_USERNAME=your-database-user
-DB_PASSWORD=your-database-password
-SESSION_DRIVER=database
-CACHE_STORE=database
-QUEUE_CONNECTION=database
+DB_CONNECTION=sqlite
+DB_DATABASE=/var/www/html/database/database.sqlite
+SESSION_DRIVER=file
+CACHE_STORE=file
+QUEUE_CONNECTION=sync
 RUN_MIGRATIONS=true
+RUN_SEEDERS=true
 ```
 
 Generate `APP_KEY` locally with:
@@ -65,7 +62,7 @@ Generate `APP_KEY` locally with:
 php artisan key:generate --show
 ```
 
-Set `RUN_MIGRATIONS=true` only when the database credentials are ready. The real `.env` file is intentionally ignored and should be configured in Render, not committed to GitHub.
+The SQLite setup above is enough for a live demo. For a production app with persistent data, replace the `DB_*` values with an external MySQL database and set `RUN_SEEDERS=false` after the first deploy. The real `.env` file is intentionally ignored and should be configured in Render, not committed to GitHub.
 
 ## Login Details
 
